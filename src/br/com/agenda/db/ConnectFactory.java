@@ -16,8 +16,9 @@ public class ConnectFactory {
 	
 	public Connection getConnection() {
 		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			return DriverManager.getConnection(url, user, password);
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
 	}		
