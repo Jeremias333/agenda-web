@@ -119,11 +119,11 @@ public class ContatoDao {
 		return null;
 	}
 	
-	public void remove(Contato contato) {
+	public void remove(Contato contato, int id) {
 		try {
 			PreparedStatement stmt = connection.prepareStatement("delete " +
 			"from contatos where id=?");
-			stmt.setLong(1, contato.getId());
+			stmt.setLong(id, contato.getId());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
