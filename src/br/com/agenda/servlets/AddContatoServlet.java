@@ -3,7 +3,6 @@ package br.com.agenda.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
@@ -22,21 +21,17 @@ public class AddContatoServlet extends HttpServlet{
 	private String endereco;
 	private String nome;
 	
-	
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		
 		PrintWriter out = res.getWriter();
 		
-		nome = req.getParameter("nome");
-		endereco = req.getParameter("endereco");
-		email = req.getParameter("email");
-		String dataText = req.getParameter("dataNasc");
 		try {
-			Date date = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dataText);
-			dataNasc = date;
+			nome = req.getParameter("nome");
+			endereco = req.getParameter("endereco");
+			email = req.getParameter("email");
+			dataNasc = Date.valueOf(req.getParameter("dataNasc"));
 		}catch(Exception e) {
-			 out.println("Ocorreu um erro na renderização da página: "+e);
+			 out.println("Ocorreu um erro: "+e+"<br>");
 		}
 		
 		//Populating
@@ -53,8 +48,7 @@ public class AddContatoServlet extends HttpServlet{
 		// imprime o nome do contato que foi adicionado
 		out.println("<html>");
 		out.println("<body>");
-		out.println("Contato " + contato.getNome() +
-		" adicionado com sucesso");
+		out.println("Contato " + contato.getNome() +" adicionado com sucesso");
 		out.println("</body>");
 		out.println("</html>");
 	}
