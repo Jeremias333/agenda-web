@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.ServletException;
+
 import br.com.agenda.models.Contato;
 import br.com.agenda.utils.ExceptionDao;
 
@@ -15,7 +17,7 @@ public class ContatoDao {
 	private Connection connection;
 	private String sql;
 	
-	public ContatoDao() {
+	public ContatoDao() throws ServletException {
 		this.connection = new ConnectFactory().getConnection();
 	}
 	
