@@ -18,4 +18,9 @@
   	<servlet-name>servletHelloWorld</servlet-name>
   	<url-pattern>/helloworld</url-pattern>
   </servlet-mapping>
+  
+  <error-page>
+  	<exception-type>javax.servlet.ServletException</exception-type>
+  	<location>/error.html</location>
+  </error-page>
 </web-app>
