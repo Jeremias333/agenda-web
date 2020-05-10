@@ -29,7 +29,12 @@ public class AddContatoServlet extends HttpServlet{
 			nome = req.getParameter("nome");
 			endereco = req.getParameter("endereco");
 			email = req.getParameter("email");
-			dataNasc = Date.valueOf(req.getParameter("dataNasc"));
+			
+			if(req.getParameter("dataNasc").contains("/")) {
+				dataNasc = Date.valueOf(req.getParameter("dataNasc").replace('/', '-'));//deve obrigatóriamente ter formato yyyy-MM-dd
+			}else {
+				dataNasc = Date.valueOf(req.getParameter("dataNasc"));
+			}
 		}catch(Exception e) {
 			 out.println("Ocorreu um erro: "+e+"<br>");
 		}
