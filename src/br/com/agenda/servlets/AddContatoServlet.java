@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import br.com.agenda.db.ContatoDao;
 import br.com.agenda.models.Contato;
 
-@WebServlet("/addContato")
+@WebServlet("/AddContato")
 public class AddContatoServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private Date dataNasc;
