@@ -19,8 +19,19 @@
   	<url-pattern>/helloworld</url-pattern>
   </servlet-mapping>
   
+  <!-- Páginas de erro! --> 
   <error-page>
-  	<exception-type>javax.servlet.ServletException</exception-type>
-  	<location>/error.html</location>
+  	<error-code>404</error-code>
+  	<location>/error-pages/error-not-found.html</location>
+  </error-page>
+  
+  <!-- <error-page>
+  	<error-code>500</error-code>
+  	<location>/error-pages/error-internal.html</location>
+  </error-page> -->
+  
+  <error-page>
+  	<exception-type>java.lang.Exception</exception-type>
+  	<location>/error-pages/error-exception.html</location>
   </error-page>
 </web-app>
