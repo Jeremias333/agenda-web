@@ -21,10 +21,11 @@ public class AddContatoServlet extends HttpServlet{
 	private String email;
 	private String endereco;
 	private String nome;
+	private String erro;
 	
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		PrintWriter out = res.getWriter();
+//		PrintWriter out = res.getWriter();
 		
 		try {
 			nome = req.getParameter("nome");
