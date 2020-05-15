@@ -38,7 +38,8 @@ public class AddContatoServlet extends HttpServlet{
 				dataNasc = Date.valueOf(req.getParameter("dataNasc"));
 			}
 		}catch(Exception e) {
-			 out.println("Ocorreu um erro: "+e+"<br>");
+//			 out.println("Ocorreu um erro: "+e+"<br>");
+			erro = "Ocorreu um erro na formatação da senha "+erro;
 		}
 		
 		//Populating
