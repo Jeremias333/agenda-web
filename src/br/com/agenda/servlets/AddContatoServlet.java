@@ -54,11 +54,14 @@ public class AddContatoServlet extends HttpServlet{
 		contatoDao.add(contato);
 		
 		// imprime o nome do contato que foi adicionado
-		out.println("<html>");
-		out.println("<body>");
-		out.println("Contato " + contato.getNome() +" adicionado com sucesso");
-		System.out.println(contato.getNome());
-		out.println("</body>");
-		out.println("</html>");
+//		out.println("<html>");
+//		out.println("<body>");
+//		out.println("Contato " + contato.getNome() +" adicionado com sucesso");
+//		System.out.println(contato.getNome());
+//		out.println("</body>");
+//		out.println("</html>");
+		
+		RequestDispatcher reqdes = req.getRequestDispatcher("/contato-adicionado.jsp");
+		reqdes.forward(req, res);
 	}
 }
