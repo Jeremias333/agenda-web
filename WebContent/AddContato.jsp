@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<c:import url="/cabecalho.jsp"/>
-		<form action="http://192.168.10.105:8080/Agenda/AddContato">
+		<form action="http://192.168.10.106:8080/Agenda/AddContato">
 			Nome: <input type="text" name="nome" /><br />
 			E-mail: <input type="text" name="email" /><br />
 			Endereço: <input type="text" name="endereco" /><br />
