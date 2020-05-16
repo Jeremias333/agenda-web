@@ -14,17 +14,18 @@
 		</style>
 	</head>
 	<body>
-		<header><c:import url="cabecalho.jsp"/></header>
-		<jsp:useBean id="contatodao" class="br.com.agenda.db.ContatoDao"/>
+		<header><c:import url="../../cabecalho.jsp"/></header>
 		<br>
 		<table>
 			<tr style="background:black;" align="center">
-				<td style="color:white;">Nome</td>
-				<td style="color:white;">Email</td>
-				<td style="color:white;">Endereço</td>
-				<td style="color:white;">Data de Nascimento</td>
+				<td style="color:white;" width="20%">Nome</td>
+				<td style="color:white;" width="20%">Email</td>
+				<td style="color:white;" width="20%">Endereço</td>
+				<td style="color:white;" width="20%">Data de Nascimento</td>
+				<td>Remoção</td>
+				<td>Editar</td>
 			</tr>
-			<c:forEach var="contato" items="${contatodao.list}">
+			<c:forEach var="contato" items="${contatos}">
 				<tr align="center">
 					<td>${contato.nome}</td>
 					<td>
