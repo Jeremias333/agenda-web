@@ -10,7 +10,8 @@
 	<body>
 		<input type="text" id="${id}" name="${id}"/>
 		<script type="text/javascript">
-			$("#${id}").datepicker({changeMonth: true, changeYear: true, dateFormat: "yy-mm-dd"});
+			var atualyData = new Date().getFullYear();
+			$("#${id}").datepicker({changeMonth: true, changeYear: true, dateFormat: "yy-mm-dd", yearRange:'1940:'+atualyData});
 		</script>
 	</body>
 </html>
