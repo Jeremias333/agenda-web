@@ -40,16 +40,10 @@
 					<td>
 						<fmt:formatDate value="${contato.dataNasc}" pattern="dd/MM/yyyy"/>
 					</td>
-					
-					<td>
-						<a style="color:red;" href="mvc?logica=RemoveContatoLogica&id=${contato.id}">Remover</a>
-					</td>
-					<td>
-						<a style="color:green;" href="mvc?logica=ListarLogica&id=${contato.id}">Editar</a>
-					</td>
 				</tr>
 			</c:forEach>
 		</table><br>
-		<footer><c:import url="../../rodape.jsp"></c:import></footer>
+		<hr>
+		<footer><c:import url="rodape.jsp"></c:import></footer>
 	</body>
 </html>
